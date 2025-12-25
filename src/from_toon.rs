@@ -34,9 +34,9 @@ impl PluginCommand for FromToon {
         match input {
             PipelineData::Empty => Ok(input),
             PipelineData::ByteStream(byte_stream, _pipeline_metadata) => {
-                let mut reader: Reader = byte_stream.reader().map_err(|e| {
+                let mut reader: Reader = byte_stream.reader().ok_or_else(|| {
                     LabeledError::new("Failed to read TOON")
-                        .with_label(format!("byte stream error: {}", e), call.head)
+                        .with_label("byte stream reader unavailable", call.head)
                 })?;
 
                 let mut buffer = Vec::new();
