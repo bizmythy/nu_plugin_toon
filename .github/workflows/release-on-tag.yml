@@ -26,12 +26,12 @@ jobs:
         run: |
           cargo build --release --target ${{ matrix.target }}
           mkdir -p dist
-          cp target/${{ matrix.target }}/release/nu_plugin_bson${{ matrix.ext }} dist/nu_plugin_bson-${{ matrix.target }}${{ matrix.ext }}
+          cp target/${{ matrix.target }}/release/nu_plugin_toon${{ matrix.ext }} dist/nu_plugin_toon-${{ matrix.target }}${{ matrix.ext }}
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nu_plugin_bson-${{ matrix.target }}
-          path: dist/nu_plugin_bson-${{ matrix.target }}${{ matrix.ext }}
+          name: nu_plugin_toon-${{ matrix.target }}
+          path: dist/nu_plugin_toon-${{ matrix.target }}${{ matrix.ext }}
 
   release:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "$TAG_NAME" dist/**/nu_plugin_bson-* \
+          gh release create "$TAG_NAME" dist/**/nu_plugin_toon-* \
             --title "$VERSION" \
             --notes "" \
             --verify-tag
