@@ -1,20 +1,20 @@
 use nu_plugin::{Plugin, PluginCommand};
-mod bson_to_nu;
-mod from_bson;
-mod nu_to_bson;
-mod to_bson;
+mod from_toon;
+mod nu_to_toon;
+mod toon_to_nu;
+mod to_toon;
 
-use crate::from_bson::FromBson;
-use crate::to_bson::ToBson;
+use crate::from_toon::FromToon;
+use crate::to_toon::ToToon;
 
-pub struct BsonPlugin;
+pub struct ToonPlugin;
 
-impl Plugin for BsonPlugin {
+impl Plugin for ToonPlugin {
     fn version(&self) -> String {
         env!("CARGO_PKG_VERSION").into()
     }
 
     fn commands(&self) -> Vec<Box<dyn PluginCommand<Plugin = Self>>> {
-        vec![Box::new(FromBson), Box::new(ToBson)]
+        vec![Box::new(FromToon), Box::new(ToToon)]
     }
 }

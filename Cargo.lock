@@ -552,6 +552,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "json2toon_rs"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a229afbadea9f7381acc717e9977c83f5f6b511a69ccfca772f6cb74d17ae0f9"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "lean_string"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -949,10 +959,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "nu_plugin_bson"
+name = "nu_plugin_toon"
 version = "25.1090.0"
 dependencies = [
  "base64",
+ "json2toon_rs",
  "nu-plugin",
  "nu-protocol",
  "toon",
@@ -1329,6 +1340,7 @@ version = "1.0.147"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6af14725505314343e673e9ecb7cd7e8a36aa9791eb936235a3567cc31447ae4"
 dependencies = [
+ "indexmap",
  "itoa",
  "memchr",
  "serde",

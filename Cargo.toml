@@ -1,5 +1,5 @@
 [package]
-name = "nu_plugin_bson"
+name = "nu_plugin_toon"
 version = "25.1090.0"
 edition = "2024"
 
@@ -12,4 +12,5 @@ license = "MIT"
 nu-plugin = "0.109.0"
 nu-protocol = { version = "0.109.0", features = ["plugin"] }
 base64 = "0.22.1"
+json2toon_rs = "0.2.0"
 toon = "0.1.2"
