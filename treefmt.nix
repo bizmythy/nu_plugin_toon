@@ -14,6 +14,7 @@
     toml-sort.enable = true;
     dos2unix.enable = true;
     keep-sorted.enable = true;
+    rustfmt.enable = true;
     # buggy as of right now
     # nufmt.enable = true;
   };
