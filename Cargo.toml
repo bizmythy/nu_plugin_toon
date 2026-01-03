@@ -9,7 +9,7 @@ repository = "https://github.com/bizmythy/nu_plugin_toon"
 license = "MIT"
 
 [dependencies]
-nu-plugin = "0.108.0"
+nu-plugin = "0.109.1"
 nu-protocol = { version = "0.108.0", features = ["plugin"] }
 base64 = "0.22.1"
 json2toon_rs = "0.2.0"
